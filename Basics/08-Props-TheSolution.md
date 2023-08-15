@@ -73,13 +73,14 @@ function App() {
       <Card
         image="./images/image1.png"
         name="Amit Suthar"
-        phone="(212) 555-1234"
+        // use {} to define non-string values
+        phone= {(212) 555-1234} 
         email="mr.whiskaz@catnap.meow"
       />
       <Card
         image="./images/image2.png"
         name="Sumit Tiwari"
-        phone="(212) 555-1234"
+        phone= {(212) 555-1234}
         email="fluff@me.com"
       />
     </div>
