@@ -28,7 +28,7 @@ export default function App() {
   const result = React.useState("Hello");
   console.log(result);
 
-  // to access the array elements
+  // to access the state array elements in DOM
   return <div>{result[0]}</div>;
 }
 ```
@@ -37,7 +37,7 @@ export default function App() {
 ["Hello", f()];
 ```
 
-### But using `{result[0]}` to access elements is not the correct way to use States. So to overcome this, we can use array destructuring!
+### But using `{result[0]}` to access the state elements is not the correct way to use States. So to overcome this, we can use array destructuring!
 
 ---
 
