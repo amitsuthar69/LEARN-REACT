@@ -1,4 +1,4 @@
-## How data is passed through a Component to other another ?
+## How data is passed through a Component to another ?
 
 **In react DOM tree, the Top / Parent component renders the other Children components, which can be represented as a Tree Data Structure where the branches represents that the Top component is rendring the upcoming chlid components.**
 
