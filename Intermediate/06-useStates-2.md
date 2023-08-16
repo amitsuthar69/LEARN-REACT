@@ -51,6 +51,60 @@ export default function MyMind(){
 
 ---
 
+## One More Example
+
+**Below Example contains only AddItem Component as it's mainn focus, `html` and `css` files are not included.**
+
+```js
+// An AddItem component which just adds things in a list.
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+export default function AddItems() {
+  const [thingsArray, setThingsArray] = React.useState(["Thing 1"]);
+
+  const thingsElement = thingsArray.map((thing) => <p>{thing}</p>);
+
+  function addItem() {
+    setThingsArray((prevState) => [
+      ...prevState,
+      `Thing ${prevState.length + 1}`,
+      // [...prevState] is javascript spread operator
+    ]);
+  }
+
+  return (
+    <div>
+      <button onClick={addItem}>Add Item</button>
+      {thingsArray}
+    </div>
+  );
+}
+
+ReactDOM.render(<AddItems />, document.getElementById("root"));
+```
+
+## Output :
+
+## <img alt="add-item" src="../Assets/add-item.png"/>
+
+## useState in Objects
+
+### A state can not only be an array but can also be set to an object.
+
+```js
+const [info, setInfo] = React.useState({
+    name: "Amit",
+    age: "20"
+    isadult: true
+})
+
+const isElegible = state.isadult ? "Yes" : "No"
+
+console.log(isElegible) // Yes
+```
+
 ## Quick Revision :
 
 1.  **You have 2 options for what you can pass in to a
