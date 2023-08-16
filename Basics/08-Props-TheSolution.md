@@ -1,5 +1,7 @@
 ## Props
 
+**Props refers to the property being passed into a component in order for it to work correctly, similar to how functions recieve parameters. A component receiving a prop is not allowed to modify those prop. That is they are immutable.**
+
 - Props are arguments passed into React components.
 - Props are passed to components via HTML attributes.
 
@@ -74,7 +76,7 @@ function App() {
         image="./images/image1.png"
         name="Amit Suthar"
         // use {} to define non-string values
-        phone= {(212) 555-1234} 
+        phone= {(212) 555-1234}
         email="mr.whiskaz@catnap.meow"
       />
       <Card
