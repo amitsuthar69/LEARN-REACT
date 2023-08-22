@@ -159,6 +159,55 @@ export default function App() {
 
 ---
 
+### Another Example:
+
+```js
+function Hero() {
+  const card = [
+    {
+      img: "layers.svg",
+      name: "Layers",
+    },
+    {
+      img: "sisyphus.svg",
+      name: "Sisyphus",
+    },
+    {
+      img: "circooles.svg",
+      name: "Circooles",
+    },
+    {
+      img: "catalog.svg",
+      name: "Catalog",
+    },
+    {
+      img: "quotient.svg",
+      name: "Quotient",
+    },
+  ];
+
+  return (
+    <div>
+      {card.map((item, index) => (
+        <div key={index} className="flex">
+          <img
+            className="md:w-7"
+            width={40}
+            src={`HeroSection/${item.img}`}
+            alt="img"
+          />
+          <div className="text-part">{item.name}</div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Hero;
+```
+
+---
+
 ## For Revision :
 
 1.  **What does the `.map()` array method do?**
@@ -183,4 +232,3 @@ export default function App() {
     It makes our code more "self-sustaining" - not requiring
     additional changes whenever the data changes.
 
----
