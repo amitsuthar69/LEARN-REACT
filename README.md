@@ -20,3 +20,5 @@ This Repository contains:
   - [Use States 2](./Intermediate/06-useStates-2.md)
 - [PROJECTS](./Projects/)
   - [AirBnb Experience](./Projects/airbnb-experince/)
+  - [Vans Basic](./Projects/vans-basic)
+  - [Vans Intermediate](./Projects/vans-intermediate)
