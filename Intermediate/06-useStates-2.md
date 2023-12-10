@@ -1,14 +1,16 @@
 ## Changing States
 
-### If you ever need the old-value of state to help you determine the new-value of state, you should pass a callback function to your state setter function instead of using state directly.
-
-### This callback function will receive the old-value of state as its parameter, which you can then use to determine your new-value of state.
+If you ever need the old-value of state to help you determine the new-value of state, you should **pass a callback function** to your state setter function instead of using state directly.
 
 ```js
 function Handler() {
   setCount(callBackFn());
 }
 ```
+
+This callback function will receive the old-value of state as its parameter, which you can then use to determine your new-value of state.
+
+---
 
 ```js
 // example of an eventHandler function which changes the state of count.
@@ -18,9 +20,9 @@ function add() {
 }
 ```
 
-### Considering the naming convention for parameter of the call back function in `setCount`, we can add a prefix `prev` which then defines the previous state and makes it more easy to understand.
+Considering the naming convention for parameter of the call back function in `setCount`, we can add a prefix `prev` which then defines the previous state and makes it more easy to understand.
 
-### The `prevCount` parameter is the current state of the `useState` which is then changed to an another state.
+**The `prevCount` parameter is the current state of the `useState` which is then changed to an another state.**
 
 ---
 
@@ -53,7 +55,7 @@ export default function MyMind(){
 
 ## One More Example
 
-**Below Example contains only AddItem Component as it's mainn focus, `html` and `css` files are not included.**
+**Below Example contains only AddItem Component as it's main focus, `html` and `css` files are not included.**
 
 ```js
 // An AddItem component which just adds things in a list.
@@ -70,14 +72,14 @@ export default function AddItems() {
     setThingsArray((prevState) => [
       ...prevState,
       `Thing ${prevState.length + 1}`,
-      // [...prevState] is javascript spread operator
+      // "..." is javascript spread operator to get all previous values.
     ]);
   }
 
   return (
     <div>
       <button onClick={addItem}>Add Item</button>
-      {thingsArray}
+      {thingsElement}
     </div>
   );
 }

@@ -1,14 +1,14 @@
 ## React useState
 
+React provides us the `useState()` hook to deal with states.
+
 ```js
 import React from "react";
 
 export default function App() {
-  // using react library's useState method
+  // using useState() hook.
   const result = React.useState();
   console.log(result);
-
-  return <div>...</div>;
 }
 ```
 
@@ -17,7 +17,7 @@ Output for `console.log(result)` :
 ```js
 [undefined, f()];
 
-// it gives us an array, where f() is a function adnd undefined is some value to be passed in useState.
+// it gives us an array, undefined is the current value/state of the result variable and f() is a function to update the value/state.
 ```
 
 ---
@@ -37,11 +37,11 @@ export default function App() {
 ["Hello", f()];
 ```
 
-### But using `{result[0]}` to access the state elements is not the correct way to use States. So to overcome this, we can use array destructuring!
+But using `{result[0]}` to access the state elements is not the correct way to use States. So to overcome this, we can use **array destructuring**!
 
 ---
 
-## Destructuring the useState:
+### Destructuring the useState:
 
 #### As we know that the variable holding `React.useState()` returns an array, so we can destructure the array at the same time we declare it in a variable!
 
@@ -64,13 +64,11 @@ import React from "react";
 
 export default function App() {
   const [isImportant, func] = React.useState("Yes");
-  //   console.log(isImportant); // "Yes"
+
   return (
-    <div className="state">
-      <h1 className="state--title">Is state important to know?</h1>
-      <div className="state--value">
-        <h1>{isImportant}</h1>
-      </div>
+    <div>
+      <h1>Is state important to know?</h1>
+      <p>{isImportant}</p>
     </div>
   );
 }
@@ -78,23 +76,23 @@ export default function App() {
 
 ---
 
-### But then, we can't change the state of `isImportant` to "No" by just doing, `isImportant = "No"`.
+We explicitly assign the current state to "Yes". But then, we can't change the state of `isImportant` to "No" by doing, `isImportant = "No"`.
 
-### So how we can change the state from "Yes" to "No" ?
+So how we can change the state from "Yes" to "No" ?
 
-### Well Here's where the `function` helps us!
+Well Here's where the `function` helps us!
 
-1. **So to change the state, we must first name the function with `set` prefix.**
+1. **So to change the state, we must first name the function with `set` prefix. (it's just a naming convention)**
 
 ```js
 const [state, setState] = React.useState("A State");
 ```
 
-2. **After that, we can use the `setState` function, inside an `eventListner` to change the state.**
+2. **After that, we can use the `setState` function directly or inside a handler function to change the state.**
 
 ```js
 function onClick() {
-  setState("An another State");
+  setState("Updated State");
 }
 ```
 
@@ -107,14 +105,14 @@ export default function App() {
   const [isImportant, setIsImportant] = React.useState("Yes");
 
   function handleClick() {
-    setIsImportant("No"); // changing the state
+    setIsImportant("No"); // updating the state
   }
 
   return (
-    <div className="state">
-      <h1 className="state--title">Is state important to know?</h1>
-      <div className="state--value" onClick={handleClick}>
-        <h1>{isImportant}</h1>
+    <div>
+      <h1>Is state important to know?</h1>
+      <div onClick={handleClick}>
+        <p>{isImportant}</p>
       </div>
     </div>
   );
@@ -125,7 +123,7 @@ export default function App() {
 
 ## Counter App with useState
 
-### Let's try making a counter app which have an increment and decrement count values.
+### Let's try making a counter app which can increment and decrement count values.
 
 ```js
 // Note: this is only the main component of counter app.
@@ -144,18 +142,10 @@ export default function App() {
   }
 
   return (
-    <div className="counter">
-      <button className="counter--minus" onClick={subtract}>
-        –
-      </button>
-
-      <div className="counter--count">
-        <h1>{count}</h1>
-      </div>
-
-      <button className="counter--plus" onClick={add}>
-        +
-      </button>
+    <div>
+      <h1>{count}</h1>
+      <button onClick={subtract}>–</button>
+      <button onClick={add}>+</button>
     </div>
   );
 }

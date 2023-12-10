@@ -11,7 +11,7 @@ const [info, setInfo] = React.useState({
 })
 ```
 
-**But what if we want to update the `iselegible` to `true` we a handler function is called ?**
+**But what if we want to update the `iselegible` to `true` when a handler function is called ?**
 
 **Well it's easy, have a look to the below code :**
 
@@ -21,16 +21,16 @@ const [info, setInfo] = React.useState({
     age: "20"
     isadult: true
     iselegible: false
+  })
 
-    function handler(){
-        setInfo(prevState => {
-            return {
-                ...prevState,
-                iselegible: !prevState.iselegible
-            }
-        })
-    }
-})
+  function handler(){
+    setInfo(prevState => {
+      return {
+        ...prevState,
+        iselegible: !prevState.iselegible
+      }
+    })
+  }
 ```
 
 ## Let's Breakdown
@@ -67,7 +67,7 @@ return {
 
 **The `...prevState` spread operator helps us to collect all the properties of previous (unupdated) object, so we don't need to mess up our code just like we did below.**
 
-**Elaborating the return statement to :**
+**Elaborating the spread operator in return statement :**
 
 ```js
 setInfo((prevState) => {
