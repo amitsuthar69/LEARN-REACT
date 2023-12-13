@@ -34,7 +34,7 @@ function App(){
         const firstName = Amit
         const lastName = Suthar
 
-        <h1>Hello {firstName} {lastName}!</h1>
+        <h1>Hello {firstName} {lastName}</h1>
     )
 }
 
